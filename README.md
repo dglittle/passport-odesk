@@ -20,10 +20,10 @@ unobtrusively integrated into any application or framework that supports
 We need to get this keyes from odesk api. I think the odesk team knows it better,
 As for me, i was simply provided with this dada
 
-    passport.use(new TwitterStrategy({
+    passport.use(new OdeskStrategy({
         consumerKey: 'f448b92c4aaf8918c0106bd164a1656',
         consumerSecret: 'e6a71b4f05467054',
-        callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+        callbackURL: "http://127.0.0.1:3000/auth/odesk/callback"
       },
       function(token, tokenSecret, profile, done) {
         User.findOrCreate({ id: profile._id }, function (err, user) {
@@ -34,7 +34,7 @@ As for me, i was simply provided with this dada
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'twitter'` strategy, to
+Use `passport.authenticate()`, specifying the `'odesk'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
@@ -84,10 +84,7 @@ For a complete, working example, refer to the [signin example](https://github.co
 
 ## Tests
 
-    $ npm install --dev
-    $ make test
-
-[![Build Status](https://secure.travis-ci.org/jaredhanson/passport-twitter.png)](http://travis-ci.org/jaredhanson/passport-twitter)
+Not implemented, because package is not published at <[http://npmjs.org]>(http://npmjs.org)
 
 ## Credits
 
@@ -97,4 +94,6 @@ For a complete, working example, refer to the [signin example](https://github.co
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2013 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2011-2013 Ostroumov Anatolij <[http://teksi.ru/resume/](http://teksi.ru/resume/)>
+Based on Plugin <[https://github.com/jaredhanson/passport-twitter](https://github.com/jaredhanson/passport-twitter)>
+by Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
