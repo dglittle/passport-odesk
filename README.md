@@ -58,7 +58,8 @@ For a complete, working example, refer to the [signin example](https://github.co
 
 ## Odesk Data Example
 ``
-    {"server_time":"1367492929",
+    {
+        "server_time":"1367492929",
         "auth_user":
             {
                 "first_name":"John",
@@ -78,8 +79,9 @@ For a complete, working example, refer to the [signin example](https://github.co
                 "company_url":"",
                 "capacity":{"provider":"yes","buyer":"yes","affiliate_manager":"no"},
                 "location":{"city":"Klin","state":"","country":"Russia"},
-                "profile_url":"https:\/\/www.odesk.com\/users\/~johnDoe"}
+                "profile_url":"https:\/\/www.odesk.com\/users\/~johnDoe"
             }
+    }
 ``
 
 ## Tests
