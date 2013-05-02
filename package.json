@@ -1,0 +1,34 @@
+{
+  "name": "passport-odesk",
+  "version": "0.0.1",
+  "description": "Odesk authentication strategy for Passport.",
+  "keywords": ["passport", "Odesk", "auth", "authn", "authentication", "identity"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vodolaz095/passport-odesk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vodolaz095/passport-odesk/issues"
+  },
+  "author": {
+    "name": "Anatolij Ostroumov",
+    "email": "Ostroumov095@gmail.com",
+    "url": "http://www.teksi.ru/resume"
+  },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "main": "./lib/passport-odesk",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x"
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+  },
+  "engines": { "node": ">= 0.8.0" }
+}
