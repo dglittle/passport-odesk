@@ -1,14 +1,14 @@
 var vows = require('vows');
 var assert = require('assert');
 var util = require('util');
-var TwitterStrategy = require('passport-odesk/strategy');
+var OdeskStrategy = require('./../lib/passport-odesk').Strategy;
 
 
 vows.describe('OdeskStrategy').addBatch({
   
   'strategy': {
     topic: function() {
-      return new TwitterStrategy({
+      return new OdeskStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -22,7 +22,7 @@ vows.describe('OdeskStrategy').addBatch({
   
   'strategy user authorization params': {
     topic: function() {
-      return new TwitterStrategy({
+      return new OdeskStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -45,7 +45,7 @@ vows.describe('OdeskStrategy').addBatch({
   
   'strategy when loading user profile': {
     topic: function() {
-      var strategy = new TwitterStrategy({
+      var strategy = new OdeskStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -94,7 +94,7 @@ vows.describe('OdeskStrategy').addBatch({
   
   'strategy when loading user profile and encountering an error': {
     topic: function() {
-      var strategy = new TwitterStrategy({
+      var strategy = new OdeskStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret'
       },
@@ -134,7 +134,7 @@ vows.describe('OdeskStrategy').addBatch({
   
   'strategy when loading user profile without extended info': {
     topic: function() {
-      var strategy = new TwitterStrategy({
+      var strategy = new OdeskStrategy({
         consumerKey: 'ABC123',
         consumerSecret: 'secret',
         skipExtendedUserProfile: true
@@ -176,7 +176,7 @@ vows.describe('OdeskStrategy').addBatch({
   
   'strategy handling a request that has been denied': {
     topic: function() {
-      var strategy = new TwitterStrategy({
+      var strategy = new OdeskStrategy({
           consumerKey: 'ABC123',
           consumerSecret: 'secret'
         },
