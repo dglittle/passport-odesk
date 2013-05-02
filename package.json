@@ -1,5 +1,5 @@
 {
-  "name": "passport-twitter",
+  "name": "passport-odesk",
   "version": "0.0.1",
   "description": "Odesk authentication strategy for Passport.",
   "keywords": ["passport", "Odesk", "auth", "authn", "authentication", "identity"],
