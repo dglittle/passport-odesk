@@ -1,4 +1,4 @@
-# Passport-Twitter
+# Passport-Odesk
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Odesk](https://www.odesk.com/)
 using the OAuth 1.0a API.
