@@ -90,6 +90,7 @@ Not implemented, because package is not published at <[http://npmjs.org]>(http:/
 
 ## Credits
 
+  - [Ostroumov Anatolij](https://github/vodolaz095)
   - [Jared Hanson](http://github.com/jaredhanson)
 
 ## License
