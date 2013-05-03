@@ -81,6 +81,7 @@ vows.describe('OdeskStrategy').addBatch({
       'should load profile' : function(err, profile) {
         assert.equal(profile.provider, 'odesk');
         assert.equal(profile.displayName, 'John Doe');
+        assert.notStrictEqual(profile.name, {"familyName": 'Doe', "givenName": 'John'});
         assert.equal(profile.img, 'https://odesk-prod-portraits.s3.amazonaws.com/Users:romanov_klin:PortraitUrl_50?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=P7XYYyZr9c%2Bvv%2F25voKeTg92eFc%3D');
         assert.equal(profile.country, 'Russia');
         assert.equal(profile.profile, 'https://www.odesk.com/users/~johnDoe');
