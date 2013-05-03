@@ -86,7 +86,7 @@ Install vows first
     npm test
 ```
 
-Build status - [![Build Status](https://travis-ci.org/vodolaz095/passport-odesk.png?branch=master)](https://travis-ci.org/dglittle/passport-odesk)
+Build status - [![Build Status](https://travis-ci.org/dglittle/passport-odesk.png?branch=master)](https://travis-ci.org/dglittle/passport-odesk)
 
 ## Credits
 
