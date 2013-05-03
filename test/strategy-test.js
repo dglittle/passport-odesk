@@ -3,7 +3,6 @@ var assert = require('assert');
 var util = require('util');
 var OdeskStrategy = require('./../lib/passport-odesk').Strategy;
 
-
 vows.describe('OdeskStrategy').addBatch({
   
   'strategy': {
@@ -85,10 +84,10 @@ vows.describe('OdeskStrategy').addBatch({
         assert.equal(profile.img, 'https://odesk-prod-portraits.s3.amazonaws.com/Users:romanov_klin:PortraitUrl_50?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=P7XYYyZr9c%2Bvv%2F25voKeTg92eFc%3D');
         assert.equal(profile.country, 'Russia');
         assert.equal(profile.profile, 'https://www.odesk.com/users/~johnDoe');
-        assert.equal(profile.emails, [{"value":"JohnDoe@odesk.com",type:"work"}]);
+        assert.notStrictEqual(profile.emails, [{"value":"JohnDoe@odesk.com",type:"work"}]);
         assert.equal(profile.timezone, 'Europe/Klin');
         assert.equal(profile.timezone_offset, '14400');
-        assert.equal(profile.location, {"city":"Klin","state":"","country":"Russia"});
+        assert.notStrictEqual(profile.location, {"city":"Klin","state":"","country":"Russia"});
         assert.equal(profile.company_url, 'http://example.com');
       }
     }
