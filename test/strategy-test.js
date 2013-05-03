@@ -3,7 +3,6 @@ var assert = require('assert');
 var util = require('util');
 var OdeskStrategy = require('./../lib/passport-odesk').Strategy;
 
-
 vows.describe('OdeskStrategy').addBatch({
   
   'strategy': {
@@ -37,7 +36,7 @@ vows.describe('OdeskStrategy').addBatch({
               '          { ' +
               '              "first_name":"John", ' +
               '              "last_name":"Doe", ' +
-              '              "uid":"John Doe", ' +
+              '              "uid":"John_Doe", ' +
               '              "mail":"JohnDoe@odesk.com", ' +
               '              "messenger_id":"", ' +
               '              "messenger_type":"", ' +
@@ -51,7 +50,7 @@ vows.describe('OdeskStrategy').addBatch({
               '              "portrait_32_img":"https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:romanov_klin:PortraitUrl_32?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=IZROy3xeRt260AJ3oPp3M9nJP8g%3D",' +
               '              "has_agency":"0",' +
               '              "portrait_100_img":"https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:romanov_klin:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=lOzpO2SN%2BEqwB30YsBeHz1wHMsk%3D", ' +
-              '              "company_url":"", ' +
+              '              "company_url":"http://example.com", ' +
               '              "capacity":{"provider":"yes","buyer":"yes","affiliate_manager":"no"}, ' +
               '              "location":{"city":"Klin","state":"","country":"Russia"}, ' +
               '              "profile_url":"https:\/\/www.odesk.com\/users\/~johnDoe"} ' +
@@ -81,8 +80,16 @@ vows.describe('OdeskStrategy').addBatch({
       },
       'should load profile' : function(err, profile) {
         assert.equal(profile.provider, 'odesk');
-        assert.equal(profile.name, 'John Doe');
-        assert.equal(profile._id, 'John Doe');
+        assert.equal(profile.displayName, 'John Doe');
+        assert.notStrictEqual(profile.name, {"familyName": 'Doe', "givenName": 'John'});
+        assert.equal(profile.img, 'https://odesk-prod-portraits.s3.amazonaws.com/Users:romanov_klin:PortraitUrl_50?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=P7XYYyZr9c%2Bvv%2F25voKeTg92eFc%3D');
+        assert.equal(profile.country, 'Russia');
+        assert.equal(profile.profile, 'https://www.odesk.com/users/~johnDoe');
+        assert.notStrictEqual(profile.emails, [{"value":"JohnDoe@odesk.com",type:"work"}]);
+        assert.equal(profile.timezone, 'Europe/Klin');
+        assert.equal(profile.timezone_offset, '14400');
+        assert.notStrictEqual(profile.location, {"city":"Klin","state":"","country":"Russia"});
+        assert.equal(profile.company_url, 'http://example.com');
       }
     }
   },

@@ -52,37 +52,30 @@ application:
 
 ## Examples
 
-For a complete, working example, refer to the [signin example](https://github.com/vodolaz095/passport-odesk/tree/master/examples/signin).
+For a complete, working example, refer to the [signin example](https://github.com/dglittle/passport-odesk/tree/master/examples/signin).
 
 
 
 ## Odesk Data Example
-``
+```
+
     {
-        "server_time":"1367492929",
-        "auth_user":
-            {
-                "first_name":"John",
-                "last_name":"Doe",
-                "uid":"John Doe",
-                "mail":"JohnDoe@odesk.com",
-                "messenger_id":"",
-                "messenger_type":"",
-                "timezone":"Europe\/Klin",
-                "timezone_offset":"14400"
-            },
-            "info":
-            {
-                "portrait_50_img":"https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:romanov_klin:PortraitUrl_50?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=P7XYYyZr9c%2Bvv%2F25voKeTg92eFc%3D",
-                "ref":"3603850",
-                "portrait_32_img":"https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:romanov_klin:PortraitUrl_32?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=IZROy3xeRt260AJ3oPp3M9nJP8g%3D","has_agency":"0","portrait_100_img":"https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:romanov_klin:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=lOzpO2SN%2BEqwB30YsBeHz1wHMsk%3D",
-                "company_url":"",
-                "capacity":{"provider":"yes","buyer":"yes","affiliate_manager":"no"},
-                "location":{"city":"Klin","state":"","country":"Russia"},
-                "profile_url":"https:\/\/www.odesk.com\/users\/~johnDoe"
-            }
+        provider: 'odesk',
+        id: 'John_Doe',
+        name: { familyName: 'Doe', givenName: 'John' },
+        ref: '3603850',
+        displayName: 'John Doe',
+        img: 'https://odesk-prod-portraits.s3.amazonaws.com/Users:johnDoe:PortraitUrl_50?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&Expires=2147483647&Signature=P7XYYyZr9c%2Bvv%2F25voKeTg92eFc%3D',
+        country: 'Russia',
+        profile: 'https://www.odesk.com/users/~johnDoe',
+        emails: [ { value: 'JohnDoe@odesk.com', type: 'work' } ],
+        timezone: 'Europe/Klin',
+        timezone_offset: '14400',
+        location: { city: 'Klin', state: '', country: 'Russia' },
+        company_url: 'http://example.com'
     }
-``
+
+```
 
 ## Tests
 
@@ -90,6 +83,7 @@ Not implemented, because package is not published at <[http://npmjs.org]>(http:/
 
 ## Credits
 
+  - [Ostroumov Anatolij](https://github/vodolaz095)
   - [Jared Hanson](http://github.com/jaredhanson)
 
 ## License
@@ -97,5 +91,7 @@ Not implemented, because package is not published at <[http://npmjs.org]>(http:/
 [The MIT License](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2011-2013 Ostroumov Anatolij <[http://teksi.ru/resume/](http://teksi.ru/resume/)>
+
 Based on Plugin <[https://github.com/jaredhanson/passport-twitter](https://github.com/jaredhanson/passport-twitter)>
+
 by Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
