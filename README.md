@@ -91,5 +91,7 @@ Not implemented, because package is not published at <[http://npmjs.org]>(http:/
 [The MIT License](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2011-2013 Ostroumov Anatolij <[http://teksi.ru/resume/](http://teksi.ru/resume/)>
+
 Based on Plugin <[https://github.com/jaredhanson/passport-twitter](https://github.com/jaredhanson/passport-twitter)>
+
 by Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
