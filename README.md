@@ -79,7 +79,14 @@ For a complete, working example, refer to the [signin example](https://github.co
 
 ## Tests
 
-Not implemented, because package is not published at <[http://npmjs.org]>(http://npmjs.org)
+Install vows first
+
+```
+    npm install vows
+    npm test
+```
+
+Build status - [![Build Status](https://travis-ci.org/vodolaz095/passport-odesk.png?branch=master)](https://travis-ci.org/dglittle/passport-odesk)
 
 ## Credits
 
