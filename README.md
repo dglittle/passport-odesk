@@ -57,7 +57,8 @@ For a complete, working example, refer to the [signin example](https://github.co
 
 
 ## Odesk Data Example
-``
+```
+
     {
         provider: 'odesk',
         id: 'John_Doe',
@@ -74,7 +75,7 @@ For a complete, working example, refer to the [signin example](https://github.co
         company_url: 'http://example.com'
     }
 
-``
+```
 
 ## Tests
 
