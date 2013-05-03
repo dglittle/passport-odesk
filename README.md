@@ -26,7 +26,7 @@ As for me, i was simply provided with this dada
         callbackURL: "http://127.0.0.1:3000/auth/odesk/callback"
       },
       function(token, tokenSecret, profile, done) {
-        User.findOrCreate({ id: profile._id }, function (err, user) {
+        User.findOrCreate({ id: profile.id }, function (err, user) {
           return done(err, user);
         });
       }
