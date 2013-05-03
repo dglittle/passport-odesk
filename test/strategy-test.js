@@ -4,7 +4,7 @@ var util = require('util');
 var OdeskStrategy = require('./../lib/passport-odesk').Strategy;
 
 vows.describe('OdeskStrategy').addBatch({
-  
+
   'strategy': {
     topic: function() {
       return new OdeskStrategy({
@@ -13,7 +13,7 @@ vows.describe('OdeskStrategy').addBatch({
       },
       function() {});
     },
-    
+
     'should be named odesk': function (strategy) {
       assert.equal(strategy.name, 'odesk');
     }
@@ -40,7 +40,7 @@ vows.describe('OdeskStrategy').addBatch({
         consumerSecret: 'secret'
       },
       function() {});
-      
+
       // mock
       strategy._oauth.get = function(url, token, tokenSecret, callback) {
           var body = '{' +
@@ -72,22 +72,22 @@ vows.describe('OdeskStrategy').addBatch({
 
           callback(null, body, undefined);
       }
-      
+
       return strategy;
     },
-    
+
     'when told to load user profile': {
       topic: function(strategy) {
         var self = this;
         function done(err, profile) {
           self.callback(err, profile);
         }
-        
+
         process.nextTick(function () {
           strategy.userProfile('token', 'token-secret', {}, done);
         });
       },
-      
+
       'should not error' : function(err, req) {
         assert.isNull(err);
       },
@@ -107,7 +107,7 @@ vows.describe('OdeskStrategy').addBatch({
       }
     }
   },
-  
+
   'strategy when loading user profile and encountering an error': {
     topic: function() {
       var strategy = new OdeskStrategy({
@@ -115,27 +115,27 @@ vows.describe('OdeskStrategy').addBatch({
         consumerSecret: 'secret'
       },
       function() {});
-      
+
       // mock
       strategy._oauth.get = function(url, token, tokenSecret, callback) {
         callback(new Error('something went wrong'));
       }
-      
+
       return strategy;
     },
-    
+
     'when told to load user profile': {
       topic: function(strategy) {
         var self = this;
         function done(err, profile) {
           self.callback(err, profile);
         }
-        
+
         process.nextTick(function () {
           strategy.userProfile('token', 'token-secret', {}, done);
         });
       },
-      
+
       'should error' : function(err, req) {
         assert.isNotNull(err);
       },
@@ -184,7 +184,6 @@ vows.describe('OdeskStrategy').addBatch({
       }
     }
   },
-//*
     'strategy when loading user profile without extended info': {
         topic: function() {
             var strategy = new OdeskStrategy({
@@ -238,9 +237,9 @@ vows.describe('OdeskStrategy').addBatch({
                     self.callback(err, profile);
                 }
 
-//                process.nextTick(function(){
+                process.nextTick(function(){
                     strategy.userProfile('token', 'token-secret', {"id":"John_Doe","displayName":"John Doe"}, done);
-//                });
+                });
             },
 
             'should load profile' : function(err, profile) {
@@ -253,5 +252,4 @@ vows.describe('OdeskStrategy').addBatch({
             }
         }
     }
-//*/
 }).export(module);

@@ -90,7 +90,7 @@ Build status - [![Build Status](https://travis-ci.org/dglittle/passport-odesk.pn
 
 ## Credits
 
-  - [Ostroumov Anatolij](https://github/vodolaz095)
+  - [Ostroumov Anatolij](https://github.com/vodolaz095)
   - [Jared Hanson](http://github.com/jaredhanson)
 
 ## License
