@@ -5,10 +5,10 @@
   "keywords": ["passport", "Odesk", "auth", "authn", "authentication", "identity"],
   "repository": {
     "type": "git",
-    "url": "git://github.com/vodolaz095/passport-odesk.git"
+    "url": "git://github.com/dglittle/passport-odesk.git"
   },
   "bugs": {
-    "url": "https://github.com/vodolaz095/passport-odesk/issues"
+    "url": "https://github.com/dglittle/passport-odesk/issues"
   },
   "author": {
     "name": "Anatolij Ostroumov",
