@@ -17,8 +17,8 @@ unobtrusively integrated into any application or framework that supports
 
 #### Configure Strategy
 
-We need to get this keyes from odesk api. I think the odesk team knows it better,
-As for me, i was simply provided with this dada
+We need to get this keyes from Odesk [api](https://www.odesk.com/services/api/keys).
+For example, I used this values:
 
     passport.use(new OdeskStrategy({
         consumerKey: 'f448b92c4aaf8918c0106bd164a1656',
@@ -82,8 +82,8 @@ For a complete, working example, refer to the [signin example](https://github.co
 Install vows first
 
 ```
-    npm install vows
-    npm test
+    $ npm install vows
+    $ npm test
 ```
 
 Build status - [![Build Status](https://travis-ci.org/dglittle/passport-odesk.png?branch=master)](https://travis-ci.org/dglittle/passport-odesk)
@@ -100,5 +100,4 @@ Build status - [![Build Status](https://travis-ci.org/dglittle/passport-odesk.pn
 Copyright (c) 2011-2013 Ostroumov Anatolij <[http://teksi.ru/resume/](http://teksi.ru/resume/)>
 
 Based on Plugin <[https://github.com/jaredhanson/passport-twitter](https://github.com/jaredhanson/passport-twitter)>
-
 by Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
